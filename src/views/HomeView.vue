@@ -17,7 +17,9 @@
           Full stack Software Developer with a passion for design and creating
           useful user experiences
         </div>
-        <div class="button-wrap"><button>Let's Chat</button></div>
+        <div class="button-wrap">
+          <button @click="GoContact()">Let's Chat</button>
+        </div>
         <div class="social-buttons">
           <div class="button linkedin" @click="GoSocial('linkedin')"></div>
           <div class="button twitter" @click="GoSocial('twitter')"></div>
@@ -60,6 +62,12 @@ export default {
       }
       window.open(socialUrl, "_blank");
     },
+    GoContact() {
+      window.location.href = "mailto:johnpmyers1995@gmail.com";
+    },
+  },
+  mounted() {
+    document.title = "Portfolio | John Myers";
   },
 };
 </script>
@@ -71,6 +79,7 @@ p {
 }
 .home-view {
   height: 100vh;
+  overflow: hidden;
 }
 .top-bar {
   height: 100px;
@@ -196,5 +205,46 @@ p {
   right: 0;
   border-radius: 20%;
   background-size: 120%;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+  .column.left {
+    min-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    grid-template-columns: 1000fr 1fr;
+  }
+  .background-circle {
+    display: none;
+  }
+  .column.left {
+    padding: 170px 20px;
+    grid-template-rows: 1fr 1fr 1fr 2fr 3fr;
+  }
+  .heading {
+    display: flex;
+    align-items: flex-end;
+  }
+  .column.right {
+    position: relative;
+    width: 0px;
+  }
+  .button-wrap {
+    justify-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0px 0px 80px 0px;
+  }
+  .image-wrap {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+  }
 }
 </style>
