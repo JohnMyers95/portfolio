@@ -186,7 +186,7 @@ p {
   overflow: hidden;
 }
 .image-wrap .image {
-  background-image: url("~@/assets/body_shot.jpeg");
+  background-image: url("~@/assets/body_shot.webp");
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
