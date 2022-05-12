@@ -236,8 +236,7 @@ p {
   .button-wrap {
     justify-content: center;
     display: flex;
-    flex-wrap: nowrap;
-    padding: 0px 0px 80px 0px;
+    max-height: 80px;
   }
   .image-wrap {
     position: absolute;
@@ -245,6 +244,27 @@ p {
     right: 20px;
     width: 200px;
     height: 200px;
+    border-radius: 100px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .column.left {
+    padding: 70px 0px;
+    grid-template-rows: 1fr 1fr 0.6fr 2fr;
+  }
+  .column.left .button-wrap {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .image-wrap {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
     border-radius: 100px;
   }
 }
