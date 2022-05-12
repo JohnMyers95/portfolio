@@ -19,15 +19,15 @@
         </div>
         <div class="button-wrap"><button>Let's Chat</button></div>
         <div class="social-buttons">
-          <div class="button linkedin"></div>
-          <div class="button twitter"></div>
-          <div class="button instagram"></div>
-          <div class="button github"></div>
+          <div class="button linkedin" @click="GoSocial('linkedin')"></div>
+          <div class="button twitter" @click="GoSocial('twitter')"></div>
+          <div class="button instagram" @click="GoSocial('instagram')"></div>
+          <div class="button github" @click="GoSocial('github')"></div>
         </div>
       </div>
       <div class="column right">
         <div class="image-wrap">
-          <div class="image"></div>
+          <img class="image" />
         </div>
       </div>
     </div>
@@ -41,6 +41,26 @@ import MenuBar from "@/components/common/MenuBar.vue";
 export default {
   name: "HomeView",
   components: { MenuBar },
+  methods: {
+    GoSocial(network) {
+      let socialUrl = "";
+      switch (network) {
+        case "twitter":
+          socialUrl = "https://twitter.com/Xenos1495";
+          break;
+        case "linkedin":
+          socialUrl = "https://www.linkedin.com/in/john-myers-984465165/";
+          break;
+        case "instagram":
+          socialUrl = "https://www.instagram.com/johnm1495/";
+          break;
+        case "github":
+          socialUrl = "https://github.com/JohnMyers95";
+          break;
+      }
+      window.open(socialUrl, "_blank");
+    },
+  },
 };
 </script>
 
@@ -142,6 +162,10 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   max-width: 80px;
+  box-shadow: 7px 7px 20px 3px #d3d3d3;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
 }
 .button.linkedin {
   background-image: url("https://img.icons8.com/ios-glyphs/90/000000/linkedin-circled--v1.png");
@@ -159,17 +183,18 @@ p {
   width: 600px;
   height: 600px;
   position: relative;
+  overflow: hidden;
 }
 .image-wrap .image {
-  background-image: url(http://localhost:8080/img/body_shot.760d3902.jpeg);
+  background-image: url("~@/assets/body_shot.jpeg");
   width: 100%;
   height: 100%;
-  background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
   top: 0px;
-  right: -25%;
+  right: 0;
   border-radius: 20%;
+  background-size: 120%;
 }
 </style>
