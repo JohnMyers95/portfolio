@@ -15,7 +15,8 @@
         </div>
         <div class="subheading">
           Full stack Software Developer with a passion for design and creating
-          useful user experiences
+          useful user experiences. <br /><br />This site is very much under
+          construction but it will be finished one day soon...
         </div>
         <div class="button-wrap">
           <button @click="GoContact()">Let's Chat</button>
