@@ -18,7 +18,7 @@ nav a {
   text-decoration: none;
 }
 nav a.router-link-exact-active {
-  color: #d89623;
+  color: #bd7800;
 }
 .nav-bar {
   display: flex;

@@ -30,7 +30,7 @@
       </div>
       <div class="column right">
         <div class="image-wrap">
-          <img class="image" />
+          <div alt="Picture of me, John Myers" class="image" />
         </div>
       </div>
     </div>
